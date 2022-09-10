@@ -33,7 +33,9 @@ proceed.btn4POM(driver).click();
     public void successProceed(){
         String expectedResult = "Thank you, your order has been placed successfully\n" +
                 "    You'll be redirected to Home page shortly!!";
-        String actualResult = driver.findElement(By.className("html")).getText();
+        String url = "https://rahulshettyacademy.com/seleniumPractise/#/country";
+
+       String actualResult = String.valueOf(driver.findElement(By.xpath("//a[@href=\"" + url + "\"]")));
         Assert.assertEquals(actualResult.concat(expectedResult), true);
     }
     @AfterTest
